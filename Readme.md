@@ -1,0 +1,1 @@
+Este projeto é somente para aprendizado.
