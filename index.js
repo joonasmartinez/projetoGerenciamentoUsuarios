@@ -11,6 +11,12 @@ var fields = document.querySelectorAll("#form-user-create [name]");
 
 fields.forEach(function(field, index){
 
-console.log(field)
+    if(field.name == "gender"){
+
+        console.log("SIM", field)
+    }else{
+        console.log("NAO")
+    }
+//console.log(field)
 
 });
