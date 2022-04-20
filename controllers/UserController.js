@@ -25,7 +25,6 @@ class UserController {
                 this.addLine(values);
             });
             
-            
         });
 
     }
@@ -42,11 +41,11 @@ class UserController {
 
         let file = elements[0].files[0];
 
-        fileReader.onLoad = ()=>{
+        fileReader.onload = ()=>{
 
-            
             callback(fileReader.result);
         };
+
 
         fileReader.readAsDataURL(file);
 
