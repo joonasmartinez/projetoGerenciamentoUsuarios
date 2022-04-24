@@ -8,6 +8,7 @@ class UserController {
         
         this.onSubmit();
         this.onEditCancel();
+        this.selectAll();
 
     }
 
@@ -99,6 +100,8 @@ class UserController {
             this.getPhoto(this.formEl).then(
                 (content)=>{
                 values.photo = content;
+
+                this.insert(values);
 
                 this.addLine(values);
 
@@ -227,7 +230,7 @@ class UserController {
 
     insert(data){
 
-        let users= [];
+        let users=  this.getUsersStorage();
 
         users.push(data);
 
@@ -238,8 +241,6 @@ class UserController {
     addLine(dataUser){
 
         let tr = document.createElement("tr");
-
-        this.insert(dataUser);
 
         tr.dataset.user = JSON.stringify(dataUser);
 
