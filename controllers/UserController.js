@@ -47,22 +47,11 @@ class UserController {
                         result._photo = content;
                     };
 
-                    tr.dataset.user = JSON.stringify(result);
+                    let user = new User();
 
-                    tr.innerHTML = 
-                        `<tr>
-                        <td><img src="${result._photo}" alt="User Image" class="img-circle img-sm"></td>
-                        <td>${result._name}</td>
-                        <td>${result._email}</td>
-                        <td>${(result._admin) ? 'Sim' : 'Não'}</td>
-                        <td>${Utils.dateFormat(result._register)}</td>
-                        <td>
-                        <button type="button" class="btn btn-primary btn-edit btn-xs btn-flat">Editar</button>
-                        <button type="button" class="btn btn-danger btn-xs btn-flat">Excluir</button>
-                        </td>
-                        </tr>`;
+                    user.loadFromJSON(result);
 
-                    this.addEventsTr(tr);
+                    this.getTr(user, tr);
 
                     this.updateCount();
 
