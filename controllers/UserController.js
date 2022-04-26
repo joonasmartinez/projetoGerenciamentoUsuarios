@@ -188,24 +188,10 @@ class UserController {
             user.admin
             );
     }
-
-    getUsersStorage(){
-
-        let users= [];
-
-        if(localStorage.getItem("users")){
-
-            users = JSON.parse(localStorage.getItem("users"))
-
-        }
-
-        return users;
-
-    }
     
     selectAll(){
     
-        let users= this.getUsersStorage();
+        let users= User.getUsersStorage();
 
         users.forEach(dataUser=>{
 

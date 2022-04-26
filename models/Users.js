@@ -73,6 +73,8 @@ class User {
 
     }
 
+    
+
     static getUsersStorage(){
 
         let users= [];
@@ -95,7 +97,7 @@ class User {
 
         usersID++;
 
-        localStorage.setItem("usersID", usersID);
+        localStorage.setItem("usersID", usersID)
 
         return usersID;
 
