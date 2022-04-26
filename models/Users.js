@@ -116,7 +116,7 @@ class User {
 
         }else{
 
-            this._id = this.getNewID;
+            this._id = this.getNewID();
 
             users.push(this); 
 
