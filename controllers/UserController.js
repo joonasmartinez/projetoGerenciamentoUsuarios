@@ -240,7 +240,17 @@ class UserController {
 
     addLine(dataUser){
 
-        let tr = document.createElement("tr");
+        let tr = this.getTr(dataUser);
+
+        this.tableEl.appendChild(tr);
+
+        this.updateCount();
+
+    }
+
+    getTr(dataUser, tr = null){
+
+        if(tr === null) tr = document.createElement("tr");
 
         tr.dataset.user = JSON.stringify(dataUser);
 
@@ -259,9 +269,7 @@ class UserController {
 
         this.addEventsTr(tr);
 
-        this.tableEl.appendChild(tr);
-
-        this.updateCount();
+        return tr;
 
     }
 
